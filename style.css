@@ -1,0 +1,153 @@
+/* style.css */
+
+:root {
+  --bg-light: #e0f7fa;
+  --bg-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #eee;
+  --glass: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.search-section,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-section input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 200px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.weather-display img {
+  width: 80px;
+  height: 80px;
+}
+
+.suggestion-section,
+.alert-section,
+.history-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.forecast-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  transition: transform 0.2s;
+}
+
+.forecast-card:hover {
+  transform: scale(1.05);
+}
+
+canvas {
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+ul#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+ul#historyList li {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+ul#historyList li:hover {
+  background: rgba(0, 123, 255, 0.3);
+}
+
+/* Dark mode overrides */
+body.dark-mode .container {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .forecast-card,
+body.dark-mode ul#historyList li {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+body.dark-mode button:hover {
+  background-color: #555;
+}
+
+body.dark-mode .forecast-card:hover,
+body.dark-mode ul#historyList li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .alert-section,
+body.dark-mode .suggestion-section {
+  color: #fff;
+}

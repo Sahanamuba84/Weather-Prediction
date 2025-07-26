@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌦️ Weather Dashboard</h1>
+
+    <div class="search-section">
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button id="voiceBtn">🎤</button>
+      <button id="searchBtn">Search</button>
+      <button id="locationBtn">📍 Current Location</button>
+    </div>
+
+    <div class="controls">
+      <button id="toggleUnits">Toggle °C / °F</button>
+      <button id="darkModeToggle">🌗 Toggle Dark Mode</button>
+      <button id="clearHistory">Clear History</button>
+    </div>
+
+    <div class="weather-display" id="weatherInfo">
+      <h2 id="cityName">City Name</h2>
+      <p id="dateTime"></p>
+      <img id="weatherIcon" src="" alt="Weather Icon" />
+      <p id="temperature">Temperature: --</p>
+      <p id="humidity">Humidity: --%</p>
+      <p id="wind">Wind: -- m/s</p>
+      <p id="condition">Condition: --</p>
+    </div>
+
+    <div class="suggestion-section" id="suggestionSection">
+      <h3>👕 Clothing Suggestion</h3>
+      <p id="suggestionText">--</p>
+    </div>
+
+    <div class="alert-section" id="alertSection"></div>
+
+    <h3>5-Day Forecast</h3>
+    <div class="forecast-section" id="forecastContainer"></div>
+
+    <h3>📊 Temperature Trend</h3>
+    <canvas id="tempChart" height="100"></canvas>
+
+    <div class="history-section">
+      <h3>Search History</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
